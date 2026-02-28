@@ -55,5 +55,3 @@ CampusGrid is a comprehensive full-stack application that allows students and ad
 - Siddharth Kumar Jena
 - Ashutosh Nayak
 - Ayutayam Sutar
-- 
-- 
