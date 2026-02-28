@@ -1,0 +1,44 @@
+# CampusGrid Demo Video Script (3 Minutes)
+
+**Target Video Length:** ~3:00 minutes
+**Pacing:** Enthusiastic, clear, and professional.
+**Visuals:** Screen recording of the UI, mixed with some diagram overlays if possible.
+
+---
+
+### [0:00 - 0:30] Introduction & The Problem
+**Visual:** Title card with Team Name and Project Logo ("CampusGrid"). Cut to a quick montage of students looking stressed trying to find a study spot, or a screen showing "NO ROOMS AVAILABLE".
+**Script:** 
+"Hello everyone! We are [Your Team Name], and we’re excited to present CampusGrid. 
+Every day, university students and researchers waste valuable time hunting for available campus resources—from study rooms to high-performance GPU workstations. 
+Traditional booking systems are static, inefficient, and often lead to hoarding, where high-demand labs are booked up but sit empty, while other students desperately need them. The campus ecosystem is broken."
+
+### [0:30 - 1:00] The Solution: CampusGrid
+**Visual:** Transition to the CampusGrid Dashboard landing page with smooth animations. Circle the stats and the live order book. 
+**Script:** 
+"Enter CampusGrid: an AI-driven, dynamic resource allocation platform. 
+Instead of a rigid schedule, CampusGrid treats campus facilities like a live market. We empower students with a token-based economy and an intelligent live order book, distributing resources fairly based on urgency and actual utilization.
+Let’s take a look at how it works."
+
+### [1:00 - 2:00] Demo: Dashboard & AI Features (The Core)
+**Visual:** Show logging in, looking at the dashboard stats. Cut to the 'Smart Recommendations' section. Hover over the cards to show the tooltip reasoning.
+**Script:** 
+"When a student logs into their dashboard, they get a real-time snapshot of campus load. 
+But they don't have to guess where to go. Our AI **Smart Recommendation** engine analyzes live usage data and the user's token budget. If the main GPU Lab is congested, the AI proactively suggests a nearby, underutilized workstation at a lower token cost—balancing the campus load automatically. Notice how it explains *why* it made the recommendation."
+
+**Visual:** Open the AI Assistant Widget in the bottom right. Type: "I need a fast computer for my machine learning project right now." Show the AI booking it.
+**Script:** 
+"For absolute convenience, we’ve built a conversational AI Assistant. You don't need to navigate menus. Just type, 'I need a fast computer for my ML project,' and the AI understands your intent, checks the live order book, and places the bid for you."
+
+### [2:00 - 2:30] The Technology & AMD Integration
+**Visual:** Show a high-level architecture diagram (from the pitch deck) highlighting the Backend and AI layer. Feature the AMD logo.
+**Script:** 
+"Under the hood, CampusGrid is built for high concurrency. Our responsive React frontend talks to a lightning-fast FastAPI Python matching engine.
+Crucially, our AI Assistant and contextual recommendation engines are designed to be powered by **AMD Instinct Accelerators**, like the MI300X, ensuring we can run advanced LLMs locally or in the cloud with ultra-low latency for thousands of students. Meanwhile, the high-frequency trading logic of our order book relies on the massive core density of **AMD EPYC processors**."
+
+### [2:30 - 3:00] Impact & Conclusion
+**Visual:** Show the Admin Dashboard (if you have one) or pan over the whole CampusGrid interface one last time. End on the team title card.
+**Script:** 
+"With CampusGrid, we eliminate 'ghost bookings', reduce student stress, and provide university administrators with unprecedented analytics on resource utilization. 
+By merging a dynamic market economy with proactive Artificial Intelligence, we are building the smart campus of the future.
+Thank you for watching, and we invite you to explore our GitHub repository!"

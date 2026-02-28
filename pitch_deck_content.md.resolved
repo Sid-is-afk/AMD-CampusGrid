@@ -1,0 +1,104 @@
+# CampusGrid - AMD Hackathon Pitch Deck Content
+
+You can use NotebookLM to generate your PPT by feeding this structured document into it. It covers all the fields required by the organizer.
+
+---
+
+## 1. Team details
+* **Team Name:** [Your Team Name]
+* **Team Members:** [Member 1, Member 2, etc.]
+* **Institution/Organization:** [Your University or Company]
+* **Contact Email:** [Your Email]
+
+## 2. Brief about your idea/prototype
+**CampusGrid** is an AI-powered, intelligent resource allocation platform designed for university campuses. It transforms how students and faculty access campus facilities—such as high-end GPU workstations, study rooms, and lab equipment—by replacing static, first-come-first-serve booking systems with a dynamic, token-based economy and AI-driven recommendations.
+
+## 3. How different is it from any of the other existing ideas?
+Traditional campus management systems use rigid scheduling grids where users blindly guess availability or hoard reservations. CampusGrid introduces a **live order book** and **bidding system**, treating campus resources like a liquid market. Furthermore, instead of forcing users to hunt for slots, our conversational **AI Assistant** and **Smart Recommendation** engine proactively suggest optimal resources based on real-time utilization, proximity, and the user's token budget.
+
+## 4. How will it be able to solve the problem?
+* **Reduces Congestion:** By visualizing demand (via live order books), users are naturally incentivized to book resources during off-peak hours.
+* **Optimizes Utilization:** The AI Recommendation system actively steers users toward underutilized resources (e.g., suggesting a less busy CS lab when the GPU lab is full).
+* **Ensures Fairness:** A token-bidding system ensures that users who urgency need a specific resource (like a high-performance workstation for an impending deadline) can prioritize their access, curbing blanket reservations.
+
+## 5. USP of the proposed solution
+The integration of a **dynamic bidding market** with a **proactive AI Agent**. While most platforms are passive directories, CampusGrid actively works to balance the load across the campus ecosystem in real-time, functioning as an intelligent broker between student needs and campus infrastructure.
+
+## 6. List of features offered by the solution
+* **Real-time Dashboard:** Live usage and availability metrics.
+* **Smart Resource Bidding:** A live order terminal to place "bids" for high-demand resources.
+* **Proactive AI Recommendations:** Auto-suggests alternative resources based on user budget and current campus utilization.
+* **Conversational AI Assistant:** Allows users to book resources organically via natural language chat.
+* **Admin Analytics:** Comprehensive view of system load and resource bottlenecks for campus administrators.
+
+## 7. Process flow or Use-case diagram
+```mermaid
+graph TD
+    A[Student/User] -->|Log in| B(CampusGrid Dashboard)
+    B --> C{Choose Action}
+    C -->|Ask AI| D[AI Assistant Widget]
+    C -->|Browse| E[Smart Recommendations]
+    C -->|Manual| F[Live Order Book / Bidding]
+    
+    D -->|NLP Booking Intent| G[FastAPI Backend Engine]
+    E -->|Click 'Reserve'| G
+    F -->|Submit Bid| G
+    
+    G --> H{Matching Engine}
+    H -->|Match Found| I[Token Balance Deducted]
+    I --> J[Resource Allocated]
+    H -->|Pending| K[Bid added to Queue]
+```
+
+## 8. Architecture diagram of the proposed solution
+```mermaid
+graph LR
+    subgraph Frontend [Client Layer]
+        UI[React / Next.js SPA]
+        FM[Framer Motion Animations]
+        TW[TailwindCSS]
+    end
+    
+    subgraph Backend [Application Layer]
+        API[FastAPI Python Server]
+        Auth[JWT Authentication]
+        Engine[Bidding & Matching Engine]
+    end
+    
+    subgraph AI [Intelligence Layer deployed on AMD]
+        LLM[LLM Service - Llama 3]
+        RAG[Usage Context & Recommendations]
+    end
+    
+    subgraph Data [Data Layer]
+        DB[(SQLite / PostgreSQL)]
+    end
+
+    UI <-->|REST API / WebSockets| API
+    API <--> Auth
+    API <--> Engine
+    API <--> LLM
+    LLM <--> RAG
+    API <--> DB
+```
+
+## 9. Technologies to be used in the solution
+* **Frontend:** React, Tailwind CSS, Framer Motion, Lucide Icons, Vite/Next.js.
+* **Backend:** Python, FastAPI, SQLAlchemy.
+* **Database:** SQLite (prototype) scalable to PostgreSQL.
+* **AI Engine:** Open-source LLM (e.g., Llama 3 / Mistral) integrated for natural language parsing and recommendation logic.
+
+## 10. Usage of AMD Products/Solutions
+* **AMD Instinct™ Accelerators:** The conversational AI assistant and real-time smart recommendation engines are powered by LLMs optimized to run on AMD Instinct GPUs (like the MI300X), ensuring ultra-low latency inference for thousands of concurrent student requests.
+* **AMD EPYC™ Processors:** The backend matching engine and high-frequency live order book rely on the massive core counts and memory bandwidth of AMD EPYC CPUs to process concurrent bids and state synchronizations without bottlenecks.
+
+## 11. Estimated implementation cost (optional)
+* **Prototype Phase:** Minimal cost ($0 - $50/mo) using free-tier cloud services and local hardware.
+* **Campus Scale Deployment:** 
+  * Cloud Compute (AMD Instances on AWS/Azure): ~$500 - $1,500/month
+  * Software Maintenance & DB Hosting: ~$200/month
+  * Total Estimated Year 1 Operational Cost: ~$15,000 - $25,000 per campus.
+
+## 12. Prototype Assets (Optional)
+* **GitHub Public Repository Link:** [Insert your GitHub URL here]
+* **Demo Video Link:** [Insert your YouTube/Drive Link here]
